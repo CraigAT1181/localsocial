@@ -8,10 +8,6 @@ import ThemedText from "../components/ThemedText";
 import ThemedButton from "../components/ThemedButton";
 
 const Index = () => {
-  const handleSubmit = async () => {
-    console.log("button clicked");
-  };
-
   return (
     <ThemedView style={styles.container}>
       <ThemedText variant="title" color="text">
@@ -28,6 +24,11 @@ const Index = () => {
         <ThemedButton bg="muted">
           <Text>Register</Text>
         </ThemedButton>
+      </Link>
+      <Spacer height="100" />
+
+      <Link href="/town">
+        <ThemedText>Our new Home page</ThemedText>
       </Link>
     </ThemedView>
   );
