@@ -9,7 +9,13 @@ const ThemedLoader = () => {
   const colorValue = t.colors.primary;
 
   return (
-    <ThemedView>
+    <ThemedView
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <ActivityIndicator size="large" color={colorValue} />
     </ThemedView>
   );

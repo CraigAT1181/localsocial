@@ -7,6 +7,8 @@ import ThemedText from "../../components/ThemedText";
 import ThemedButton from "../../components/ThemedButton";
 import Spacer from "../../components/Spacer";
 
+import ThemedLoader from "../../components/ThemedLoader";
+
 const Login = () => {
   return (
     <ThemedView style={styles.container}>
