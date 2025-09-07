@@ -3,39 +3,44 @@ import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { theme } from "../../constants/theme";
 
+// Views
+import UserView from "../../components/auth/UserView";
+
 const DashboardLayout = () => {
   const scheme = useColorScheme() || "light";
   const t = theme[scheme];
 
   return (
-    <Tabs screenOptions={{}}>
-      <Tabs.Screen
-        name="town"
-        options={{
-          title: "Town",
-          tabBarIcon: ({ focused }) => (
-            <Ionicons
-              size={24}
-              name={focused ? "person" : "person-outline"}
-              color={focused ? t.colors.iconColorFocused : t.colors.iconColor}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="county"
-        options={{
-          title: "County",
-          tabBarIcon: ({ focused }) => (
-            <Ionicons
-              size={24}
-              name={focused ? "people" : "people-outline"}
-              color={focused ? t.colors.iconColorFocused : t.colors.iconColor}
-            />
-          ),
-        }}
-      />
-    </Tabs>
+    <UserView>
+      <Tabs screenOptions={{}}>
+        <Tabs.Screen
+          name="town"
+          options={{
+            title: "Town",
+            tabBarIcon: ({ focused }) => (
+              <Ionicons
+                size={24}
+                name={focused ? "person" : "person-outline"}
+                color={focused ? t.colors.iconColorFocused : t.colors.iconColor}
+              />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="county"
+          options={{
+            title: "County",
+            tabBarIcon: ({ focused }) => (
+              <Ionicons
+                size={24}
+                name={focused ? "people" : "people-outline"}
+                color={focused ? t.colors.iconColorFocused : t.colors.iconColor}
+              />
+            ),
+          }}
+        />
+      </Tabs>
+    </UserView>
   );
 };
 

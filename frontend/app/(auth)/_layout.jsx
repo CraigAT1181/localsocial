@@ -1,8 +1,17 @@
 import { StyleSheet } from "react-native";
 import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+
+// Views
+import GuestView from "../../components/auth/GuestView";
 
 const AuthLayout = () => {
-  return <Stack screenOptions={{ headerShown: false }} />;
+  return (
+    <GuestView>
+      <StatusBar style="auto" />
+      <Stack screenOptions={{ headerShown: false }} />
+    </GuestView>
+  );
 };
 
 export default AuthLayout;
