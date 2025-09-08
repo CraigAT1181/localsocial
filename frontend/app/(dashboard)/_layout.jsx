@@ -12,7 +12,31 @@ const DashboardLayout = () => {
 
   return (
     <UserView>
-      <Tabs screenOptions={{}}>
+      <Tabs
+        screenOptions={{
+          headerShown: false,
+          tabBarStyle: {
+            borderTopColor: t.tabBarBorder,
+            paddingTop: 10,
+            height: 100,
+          },
+          tabBarActiveTintColor: t.tabBarActive,
+          tabBarInactiveTintColor: t.tabBarInactive,
+        }}
+      >
+        <Tabs.Screen
+          name="profile"
+          options={{
+            title: "Profile",
+            tabBarIcon: ({ focused }) => (
+              <Ionicons
+                size={24}
+                name={focused ? "home" : "home-outline"}
+                color={focused ? t.colors.iconColorFocused : t.colors.iconColor}
+              />
+            ),
+          }}
+        />
         <Tabs.Screen
           name="town"
           options={{

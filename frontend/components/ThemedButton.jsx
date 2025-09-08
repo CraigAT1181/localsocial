@@ -27,6 +27,8 @@ const styles = StyleSheet.create({
     padding: 18,
     borderRadius: 5,
     marginVertical: 10,
+    minWidth: 120,
+    alignItems: "center",
   },
   pressed: {
     opacity: 0.5,

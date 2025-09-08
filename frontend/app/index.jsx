@@ -1,13 +1,21 @@
-import { StyleSheet, Text } from "react-native";
-import { Link } from "expo-router";
+import { StyleSheet } from "react-native";
+import { Link, Redirect } from "expo-router";
+import { useUser } from "../hooks/useUser";
 
 // Components
 import Spacer from "../components/Spacer";
 import ThemedView from "../components/ThemedView";
 import ThemedText from "../components/ThemedText";
 import ThemedButton from "../components/ThemedButton";
+import ThemedLoader from "../components/ThemedLoader";
 
 const Index = () => {
+  const { user, authChecked } = useUser();
+
+  if (!authChecked) return <ThemedLoader />;
+
+  if (user) return <Redirect href="/profile" />;
+
   return (
     <ThemedView style={styles.container}>
       <ThemedText variant="title" color="text">
@@ -16,19 +24,14 @@ const Index = () => {
       <Spacer height="40" />
       <Link href={"/login"} asChild>
         <ThemedButton>
-          <Text>Login</Text>
+          <ThemedText color="textOnPrimary">Login</ThemedText>
         </ThemedButton>
       </Link>
       <Spacer />
       <Link href={"/register"} asChild>
-        <ThemedButton bg="muted">
-          <Text>Register</Text>
+        <ThemedButton bg="secondary">
+          <ThemedText color="textOnPrimary">Register</ThemedText>
         </ThemedButton>
-      </Link>
-      <Spacer height="100" />
-
-      <Link href="/town">
-        <ThemedText>Our new Home page</ThemedText>
       </Link>
     </ThemedView>
   );
