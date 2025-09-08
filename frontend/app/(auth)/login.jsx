@@ -13,6 +13,9 @@ import ThemedLoader from "../../components/ThemedLoader";
 import Spacer from "../../components/Spacer";
 import ThemedTextInput from "../../components/ThemedTextInput";
 
+//Utils
+import errorMap from "../../utils/errorMap";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,7 +32,7 @@ const Login = () => {
     try {
       await login(email, password);
     } catch (error) {
-      setError(error.message);
+      setError(errorMap(error));
     } finally {
       setLoading(false);
     }
