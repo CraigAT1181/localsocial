@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Image } from "react-native";
 import { Link, Redirect } from "expo-router";
 import { useUser } from "../hooks/useUser";
 
@@ -8,6 +8,7 @@ import ThemedView from "../components/ThemedView";
 import ThemedText from "../components/ThemedText";
 import ThemedButton from "../components/ThemedButton";
 import ThemedLoader from "../components/ThemedLoader";
+import ThemedLogo from "../components/ThemedLogo";
 
 const Index = () => {
   const { user, authChecked } = useUser();
@@ -18,9 +19,8 @@ const Index = () => {
 
   return (
     <ThemedView style={styles.container}>
-      <ThemedText variant="title" color="text">
-        Local Social
-      </ThemedText>
+      <ThemedLogo />
+
       <Spacer height="40" />
       <Link href={"/login"} asChild>
         <ThemedButton>

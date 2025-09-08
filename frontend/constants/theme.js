@@ -3,7 +3,7 @@ export const theme = {
   light: {
     colors: {
       // Base
-      background: "#F8FAFC", // slate-50
+      background: "#ffffff", // slate-50
       surface: "#FFFFFF", // cards / headers
       border: "#E5E7EB", // slate-200
       overlay: "rgba(0,0,0,0.06)",
@@ -12,6 +12,7 @@ export const theme = {
       text: "#0F172A", // slate-900
       title: "#0F172A",
       muted: "#64748B", // slate-500
+      inputText: "#0F172A", // slate-900
 
       // Brand / Actions
       primary: "#3B82F6", // blue-500
@@ -50,7 +51,7 @@ export const theme = {
   dark: {
     colors: {
       // Base
-      background: "#0B1220", // deep blue/gray (nice modern dark)
+      background: "#3a3a3a", // deep blue/gray (nice modern dark)
       surface: "#111827", // gray-900
       border: "#1F2937", // gray-800
       overlay: "rgba(255,255,255,0.08)",
@@ -59,6 +60,7 @@ export const theme = {
       text: "#E5E7EB", // gray-200
       title: "#F9FAFB", // gray-50
       muted: "#94A3B8", // slate-400
+      inputText: "#0F172A", // slate-900
 
       // Brand / Actions
       primary: "#60A5FA", // blue-400
